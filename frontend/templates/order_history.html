@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Order History</h1>
+    <div id="order-history">
+        {% if orders %}
+            {% for order in orders %}
+                <div class="order-item">
+                    <h4>Order ID: {{ order.id }}</h4>
+                    <p>Date: {{ order.date }}</p>
+                    <p>Total: ${{ order.total }}</p>
+                    <h5>Items:</h5>
+                    <ul>
+                        {% for item in order.items %}
+                            <li>{{ item.name }} - ${{ item.price }} (Quantity: {{ item.quantity }})</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No orders found.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        // Function to fetch order history from the backend API
+        async function fetchOrderHistory() {
+            try {
+                const response = await fetch('/api/orders');
+                const data = await response.json();
+
+                const orderHistory = document.getElementById('order-history');
+                orderHistory.innerHTML = '';
+
+                if (data.length === 0) {
+                    const noOrdersMessage = document.createElement('p');
+                    noOrdersMessage.textContent = 'No orders found.';
+                    orderHistory.appendChild(noOrdersMessage);
+                } else {
+                    data.forEach(order => {
+                        const orderItem = createOrderItem(order);
+                        orderHistory.appendChild(orderItem);
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching order history:', error);
+            }
+        }
+
+        // Function to create an order item element
+        function createOrderItem(order) {
+            const orderItem = document.createElement('div');
+            orderItem.classList.add('order-item');
+
+            const orderId = document.createElement('h4');
+            orderId.textContent = `Order ID: ${order.id}`;
+
+            const orderDate = document.createElement('p');
+            orderDate.textContent = `Date: ${order.date}`;
+
+            const orderTotal = document.createElement('p');
+            orderTotal.textContent = `Total: $${order.total}`;
+
+            const itemHeader = document.createElement('h5');
+            itemHeader.textContent = 'Items:';
+
+            const itemList = document.createElement('ul');
+            order.items.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price} (Quantity: ${item.quantity})`;
+                itemList.appendChild(listItem);
+            });
+
+            orderItem.appendChild(orderId);
+            orderItem.appendChild(orderDate);
+            orderItem.appendChild(orderTotal);
+            orderItem.appendChild(itemHeader);
+            orderItem.appendChild(itemList);
+
+            return orderItem;
+        }
+
+        // Function to initialize the page
+        function init() {
+            fetchOrderHistory();
+        }
+
+        // Call the init function when the page is fully loaded
+        window.addEventListener('load', init);
+    </script>
+{% endblock %}

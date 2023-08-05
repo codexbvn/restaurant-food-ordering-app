@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Cart</h1>
+    <div class="cart-items">
+        {% if cart_items %}
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    <h4>{{ item.name }}</h4>
+                    <p>Price: ${{ item.price }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <button onclick="removeFromCart('{{ item.id }}')">Remove</button>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+    </div>
+
+    {% if cart_items %}
+        <h2>Total: ${{ total_price }}</h2>
+        <button onclick="placeOrder()">Place Order</button>
+    {% endif %}
+{% endblock %}

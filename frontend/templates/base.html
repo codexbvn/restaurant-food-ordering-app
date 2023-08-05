@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Food Ordering App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('menu_bp.get_menu_items') }}">Menu</a>
+        <a href="{{ url_for('cart_bp.get_cart_items') }}">Cart</a>
+        <a href="{{ url_for('cart_bp.checkout') }}">Checkout</a>
+        <a href="{{ url_for('order_bp.get_order_history') }}">Order History</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

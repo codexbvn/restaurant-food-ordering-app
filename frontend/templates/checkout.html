@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Checkout</h1>
+    <div class="cart-items">
+        {% if cart_items %}
+            {% for item in cart_items %}
+                <div class="cart-item">
+                    <h4>{{ item.name }}</h4>
+                    <p>Price: ${{ item.price }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+    </div>
+
+    {% if cart_items %}
+        <h2>Total: ${{ total_price }}</h2>
+        <form id="checkout-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+            <button type="submit">Place Order</button>
+        </form>
+    {% endif %}
+{% endblock %}
