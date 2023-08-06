@@ -53,7 +53,9 @@ restaurant-food-ordering-app/
 |   |   |-- order_history.html
 |-- run.py
 
-Dependencies
+## Dependencies
+
+
 Flask
 Flask-CORS
 Flask-WTF
