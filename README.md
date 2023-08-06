@@ -57,8 +57,14 @@ restaurant-food-ordering-app/
 
 
 Flask
+
 Flask-CORS
+
 Flask-WTF
+
 Flask-Login
+
 Flask-SQLAlchemy
+
+
 
