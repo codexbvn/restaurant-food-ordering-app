@@ -8,8 +8,7 @@ def index():
 
 @frontend_bp.route('/menu')
 def menu():
-    # Replace this with logic to fetch menu items from the backend and pass them to the template
-    # For this example, we'll just pass a sample list of menu items
+
     menu_items = [
         {'name': 'Burger', 'description': 'Delicious burger with juicy beef patty.', 'price': 9.99},
         {'name': 'Pizza', 'description': 'Cheesy pizza with your favorite toppings.', 'price': 12.99},
@@ -28,3 +27,4 @@ def checkout():
 @frontend_bp.route('/order-history')
 def order_history():
     return render_template('order_history.html')
+
