@@ -14,44 +14,45 @@ This project is a web application for a restaurant food ordering system. It allo
 
 ## File Hierarchy
 
-restaurant-food-ordering-app/ 
-|-- backend/ 
-|   |-- app.py 
-|   |-- config.py 
-|   |-- database.db 
-|   |-- controllers/ 
-|   |   |-- __init__.py 
-|   |   |-- auth_controller.py 
-|   |   |-- cart_controller.py 
-|   |   |-- menu_controller.py 
-|   |   |-- order_controller.py 
-|   |-- models/ 
-|   |   |-- __init__.py 
-|   |   |-- cart_item.py 
-|   |   |-- menu_item.py 
-|   |   |-- order.py 
-|   |   |-- user.py 
-|   |-- routes/ 
-|   |   |-- __init__.py 
-|   |   |-- auth_routes.py 
-|   |   |-- cart_routes.py 
-|   |   |-- menu_routes.py 
-|   |   |-- order_routes.py 
-|-- frontend/ 
-|   |-- app.py 
-|   |-- static/ 
-|   |   |-- css/ 
-|   |   |   |-- style.css 
-|   |   |-- js/ 
-|   |   |   |-- script.js 
-|   |-- templates/ 
-|   |   |-- base.html 
-|   |   |-- cart.html 
-|   |   |-- checkout.html 
-|   |   |-- index.html 
-|   |   |-- menu.html 
-|   |   |-- order_history.html 
-|-- run.py 
+restaurant-food-ordering-app/
+|-- backend/
+|   |-- app.py
+|   |-- config.py
+|   |-- database.db
+|   |-- controllers/
+|   |   |-- __init__.py
+|   |   |-- auth_controller.py
+|   |   |-- cart_controller.py
+|   |   |-- menu_controller.py
+|   |   |-- order_controller.py
+|   |-- models/
+|   |   |-- __init__.py
+|   |   |-- cart_item.py
+|   |   |-- menu_item.py
+|   |   |-- order.py
+|   |   |-- user.py
+|   |-- routes/
+|   |   |-- __init__.py
+|   |   |-- auth_routes.py
+|   |   |-- cart_routes.py
+|   |   |-- menu_routes.py
+|   |   |-- order_routes.py
+|-- frontend/
+|   |-- app.py
+|   |-- static/
+|   |   |-- css/
+|   |   |   |-- style.css
+|   |   |-- js/
+|   |   |   |-- script.js
+|   |-- templates/
+|   |   |-- base.html
+|   |   |-- cart.html
+|   |   |-- checkout.html
+|   |   |-- index.html
+|   |   |-- menu.html
+|   |   |-- order_history.html
+|-- run.py
+
 
 ## Dependencies
 
