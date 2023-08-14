@@ -56,7 +56,6 @@ restaurant-food-ordering-app/
 
 ## Dependencies
 
-
 - Flask
 - Flask-CORS
 - Flask-WTF
