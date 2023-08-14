@@ -13,3 +13,4 @@ class Config:
 
     # Enable debugging mode (set to False in production)
     DEBUG = True
+
