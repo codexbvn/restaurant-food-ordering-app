@@ -6,3 +6,4 @@ if __name__ == "__main__":
     # Run the backend and frontend apps separately
     backend_app.run(port=5000)
     frontend_app.run(port=8000)
+
