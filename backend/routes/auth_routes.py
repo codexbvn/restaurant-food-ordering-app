@@ -41,3 +41,4 @@ def login():
     # Here, you can implement a session management or token-based authentication
 
     return jsonify({'message': 'Login successful'}), 200
+
