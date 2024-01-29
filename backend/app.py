@@ -26,3 +26,4 @@ app.register_blueprint(order_bp, url_prefix='/api')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
