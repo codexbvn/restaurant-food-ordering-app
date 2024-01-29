@@ -27,3 +27,4 @@ def place_order():
     db.session.commit()
 
     return jsonify({'message': 'Order placed successfully'}), 201
+
