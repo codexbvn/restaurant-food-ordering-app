@@ -37,3 +37,4 @@ def remove_menu_item(item_id):
     db.session.commit()
 
     return jsonify({'message': 'Menu item removed successfully'}), 200
+
