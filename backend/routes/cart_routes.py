@@ -38,3 +38,4 @@ def remove_from_cart(item_id):
     db.session.commit()
 
     return jsonify({'message': 'Item removed from cart'}), 200
+
