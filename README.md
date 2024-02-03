@@ -61,4 +61,3 @@ restaurant-food-ordering-app/
 - Flask-WTF
 - Flask-Login
 - Flask-SQLAlchemy
-
