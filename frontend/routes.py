@@ -27,5 +27,3 @@ def checkout():
 @frontend_bp.route('/order-history')
 def order_history():
     return render_template('order_history.html')
-
-
