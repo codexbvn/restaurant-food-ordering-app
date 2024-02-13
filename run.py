@@ -6,4 +6,3 @@ if __name__ == "__main__":
     
     backend_app.run(port=5000)
     frontend_app.run(port=8000)
-
